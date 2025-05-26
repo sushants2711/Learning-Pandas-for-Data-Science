@@ -1,4 +1,4 @@
-# adding new column in datasets
+# update the column value
 
 import pandas as pd
 
@@ -10,16 +10,13 @@ data = {
 }
 
 df = pd.DataFrame(data)
-
-# print(df)
-
-# I want to add one new column in a dataset also 
-
-df["Bonus"] = (df["Salary"] * 20) / 100
 print(df)
 
-# adding another way to column in our dataset 
-# .insert() - It gives you freedom where and whether you want to add the column in our dataset
+# update the value 
+df.loc[0,"Salary"] = (df.loc[0, "Salary"] * 30) /100 + df.loc[0, "Salary"] 
 
-df.insert(1, "Bonus 10%", (df["Salary"] * 10) /100)
+print(df)
+
+# Increasing salary by 30% of all person
+df["Salary"] = (df["Salary"] * 30) /100 + df["Salary"]
 print(df)
